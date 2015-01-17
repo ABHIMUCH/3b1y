@@ -105,7 +105,6 @@ extension AddCollaboratorViewController : UISearchBarDelegate
     {
         users(searchBar.text)
     }
-    
 
     
 }

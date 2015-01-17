@@ -37,6 +37,7 @@
 		82E741701A6A018900BF3D58 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82E7416F1A6A018900BF3D58 /* Images.xcassets */; };
 		82E741731A6A018900BF3D58 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E741711A6A018900BF3D58 /* LaunchScreen.xib */; };
 		82E7417F1A6A018900BF3D58 /* _b1yTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7417E1A6A018900BF3D58 /* _b1yTests.swift */; };
+		997B3EE31A6ABF050023539E /* HostSelectSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B3EE21A6ABF050023539E /* HostSelectSongsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		82E741781A6A018900BF3D58 /* 3b1yTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3b1yTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E7417D1A6A018900BF3D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82E7417E1A6A018900BF3D58 /* _b1yTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _b1yTests.swift; sourceTree = "<group>"; };
+		997B3EE21A6ABF050023539E /* HostSelectSongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostSelectSongsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		82E741651A6A018900BF3D58 /* 3b1y */ = {
 			isa = PBXGroup;
 			children = (
+				997B3EE21A6ABF050023539E /* HostSelectSongsViewController.swift */,
 				82E741681A6A018900BF3D58 /* AppDelegate.swift */,
 				825B67E21A6A2B8B006CE04E /* Generic Extensions.swift */,
 				82E7416A1A6A018900BF3D58 /* ViewController.swift */,
@@ -316,6 +319,7 @@
 				82C53F141A6AA87D003603B3 /* SessionCellView.swift in Sources */,
 				82C53F0E1A6A91C7003603B3 /* AddCollaboratorViewController.swift in Sources */,
 				82C53EF91A6A5E84003603B3 /* LoginViewController.swift in Sources */,
+				997B3EE31A6ABF050023539E /* HostSelectSongsViewController.swift in Sources */,
 				82E7416B1A6A018900BF3D58 /* ViewController.swift in Sources */,
 				825B67E31A6A2B8B006CE04E /* Generic Extensions.swift in Sources */,
 				82E741691A6A018900BF3D58 /* AppDelegate.swift in Sources */,
