@@ -159,9 +159,7 @@ Use this function to print any errors that have not be dealt with but you want t
 func log <T: Printable> (value: T)
 {
 	let date = NSDate(timeIntervalSinceNow: 0)
-	let dateFormatter = NSDateFormatter()
-	dateFormatter.dateStyle = .FullStyle
-	println("\(dateFormatter.stringFromDate(date)):  Fatal problem that hasn't been tended to: \(value)")
+	println("\(date.longStringValue):  Fatal problem that hasn't been tended to: \(value)")
 }
 /**
 Use this function to print any errors that have not be dealt with but you want to print to the command line so that everyone knows something went wrong.
@@ -172,9 +170,7 @@ Use this function to print any errors that have not be dealt with but you want t
 func log <T: DebugPrintable> (value: T)
 {
 	let date = NSDate(timeIntervalSinceNow: 0)
-	let dateFormatter = NSDateFormatter()
-	dateFormatter.dateStyle = .FullStyle
-	println("\(dateFormatter.stringFromDate(date)):  Fatal problem that hasn't been tended to: \(value)")
+	println("\(date.longStringValue):  Fatal problem that hasn't been tended to: \(value)")
 }
 
 var session : SPTSession!
@@ -229,9 +225,23 @@ extension NSDate
 {
 	var mediumStringValue : String
 	{
-		get { }
+		get
+		{
+			let dateFormatter = NSDateFormatter()
+			dateFormatter.dateStyle = .MediumStyle
+			return dateFormatter.stringFromDate(self)
+		}
 	}
-	var 
+	var longStringValue : String
+	{
+		get
+		{
+			let dateFormatter = NSDateFormatter()
+			dateFormatter.dateStyle = .LongStyle
+			dateFormatter.timeStyle = .LongStyle
+			return dateFormatter.stringFromDate(self)
+		}
+	}
 }
 
 func < (lhs: NSDate, rhs: NSDate) -> Bool

@@ -14,4 +14,7 @@ class SessionCellView: UICollectionViewCell
 	@IBOutlet var date : UILabel!
 	@IBOutlet var host : UILabel!
 	@IBOutlet var songLimit : UILabel!
+	
+	@IBOutlet var addSongs : UIButton!
+	@IBOutlet var hostRequest : UIButton!
 }

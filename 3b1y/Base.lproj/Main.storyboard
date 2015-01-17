@@ -20,7 +20,7 @@
                             <inset key="sectionInset" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qba-vG-Aj2" customClass="SessionCellView" customModule="_b1y" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="qba-vG-Aj2" customClass="SessionCellView" customModule="_b1y" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -55,6 +55,18 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0co-UC-uKX">
+                                            <rect key="frame" x="353" y="8" width="76" height="30"/>
+                                            <state key="normal" title="Add Songs">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0R-DD-8ZJ">
+                                            <rect key="frame" x="396" y="110" width="33" height="30"/>
+                                            <state key="normal" title="Host">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -63,12 +75,16 @@
                                     <constraint firstItem="kru-Fu-3Vk" firstAttribute="top" secondItem="qba-vG-Aj2" secondAttribute="topMargin" id="G3z-0Q-0Vn"/>
                                     <constraint firstItem="kru-Fu-3Vk" firstAttribute="trailing" secondItem="X5A-9K-wJV" secondAttribute="trailing" id="Jbx-Ha-xKY"/>
                                     <constraint firstItem="kru-Fu-3Vk" firstAttribute="leading" secondItem="qba-vG-Aj2" secondAttribute="leadingMargin" id="Po2-hK-D86"/>
+                                    <constraint firstItem="0co-UC-uKX" firstAttribute="top" secondItem="kru-Fu-3Vk" secondAttribute="top" id="ZAD-4E-78n"/>
+                                    <constraint firstItem="0co-UC-uKX" firstAttribute="trailing" secondItem="qba-vG-Aj2" secondAttribute="trailingMargin" id="daz-lA-Kp3"/>
                                     <constraint firstItem="kru-Fu-3Vk" firstAttribute="leading" secondItem="X5A-9K-wJV" secondAttribute="leading" id="eyB-J8-3Wt"/>
                                     <constraint firstItem="X5A-9K-wJV" firstAttribute="top" secondItem="kru-Fu-3Vk" secondAttribute="bottom" constant="6" id="pNs-fD-FwN"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="addSongs" destination="0co-UC-uKX" id="eti-LK-jkz"/>
                                     <outlet property="date" destination="n71-ez-pSg" id="cMk-Ro-qns"/>
                                     <outlet property="host" destination="X5A-9K-wJV" id="6bP-ry-6sf"/>
+                                    <outlet property="hostRequest" destination="J0R-DD-8ZJ" id="Xaj-II-sQh"/>
                                     <outlet property="name" destination="kru-Fu-3Vk" id="Zsb-64-Swq"/>
                                     <outlet property="songLimit" destination="o2Y-Mc-PlB" id="1f7-eb-1Oy"/>
                                 </connections>
@@ -89,24 +105,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phU-e5-D1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1219" y="-478"/>
-        </scene>
-        <!--Add Collaborator View Controller-->
-        <scene sceneID="iyQ-cF-8gz">
-            <objects>
-                <viewController id="EKv-Y5-kyK" customClass="AddCollaboratorViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gfb-XJ-Liq"/>
-                        <viewControllerLayoutGuide type="bottom" id="69N-oM-uOg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Et5-Lb-TkR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZPP-MT-fWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2342" y="-348"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="0QA-yg-eQO">

@@ -81,7 +81,7 @@ class ViewController: UICollectionViewController
 				pfSession.fetchIfNeeded()
 				let host = pfSession["host"] as PFUser
 				host.fetchIfNeeded()
-				return Session(objectId: pfSession.objectId, name: pfSession["eventName"]  as String, date: pfSession["eventDate"]  as NSDate, hostName: host["name"] as String, collaborators: [collaborator])
+				return Session(objectId: pfSession.objectId, name: pfSession["eventName"]  as String, date: pfSession["eventDate"]  as NSDate, hostName: host["name"] as String, hostUserName: host.username, hosting: pfSession["hosting"] as Bool, collaborators: [collaborator])
 			}
 			sessions = foundSessions.sorted({ $0.date <  $1.date })
 			if (sessions.count == 0)
@@ -117,13 +117,59 @@ extension ViewController : UICollectionViewDataSource
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as SessionCellView
 		//TODO: Create the cell.
 		let session = sessions[indexPath.row]
-		cell.name = session.name
-		cell.date =
+		cell.name.text = session.name
+		cell.date.text = session.date.longStringValue
+		cell.host.text = session.hostName
+		let songLimit = session.collaborators.filter{PFUser.currentUser().username == $0.userName }.first?.songLimit
+		cell.songLimit.text = "You have been limited to \(songLimit) songs."
+		if (songLimit == nil || songLimit == 0)
+		{
+			cell.songLimit.text = "You have unlimited song requests."
+		}
+		cell.addSongs.tag = indexPath.row
+		cell.addSongs.addTarget(self, action: "addSongsToSession:", forControlEvents: .TouchUpInside)
+		cell.hostRequest.tag = indexPath.row
+		if (PFUser.currentUser().username == session.hostUserName)
+		{
+			if (session.hosting)
+			{
+				cell.hostRequest.setTitle("View Requests", forState: .Normal)
+				cell.hostRequest.addTarget(self, action: "checkRequests", forControlEvents: .TouchUpInside)
+			}
+			else
+			{
+				cell.hostRequest.addTarget(self, action: "hostSession:", forControlEvents: .TouchUpInside)
+			}
+		}
+		else
+		{
+			cell.hostRequest.setTitle("Request Song", forState: .Normal)
+			cell.hostRequest.enabled = session.hosting
+			cell.hostRequest.addTarget(self, action: "requestSong:", forControlEvents: .TouchUpInside)
+		}
 		return cell
 	}
 	
 	override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
 	{
 		return 1
+	}
+	
+	func hostSession(sender: UIButton)
+	{
+		
+	}
+	
+	func requestSong(sender: UIButton)
+	{
+		
+	}
+	func addSongsToSession(sender: UIButton)
+	{
+		
+	}
+	func checkRequests(sender: UIButton)
+	{
+		
 	}
 }
