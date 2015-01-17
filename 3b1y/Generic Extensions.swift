@@ -151,4 +151,18 @@ extension String
 	}
 }
 
+func log <T: Printable> (value: T)
+{
+	let date = NSDate(timeIntervalSinceNow: 0)
+	let dateFormatter = NSDateFormatter()
+	dateFormatter.dateStyle = .FullStyle
+	println("\(dateFormatter.stringFromDate(date)):  Fatal problem that hasn't been tended to: \(value)")
+}
+func log <T: DebugPrintable> (value: T)
+{
+	let date = NSDate(timeIntervalSinceNow: 0)
+	let dateFormatter = NSDateFormatter()
+	dateFormatter.dateStyle = .FullStyle
+	println("\(dateFormatter.stringFromDate(date)):  Fatal problem that hasn't been tended to: \(value)")
+}
 
