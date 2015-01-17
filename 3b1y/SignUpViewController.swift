@@ -44,7 +44,7 @@ class SignUpViewController: UIViewController
 		scrollView.contentSize = contentView.frame.size
 		scrollView.bouncesZoom = false
 		
-		let attributes : [NSObject: AnyObject] = [NSForegroundColorAttributeName: UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.6)]
+		let attributes : [NSObject: AnyObject] = [NSForegroundColorAttributeName: UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.7)]
 		let width = view.bounds.width * 0.75
 		let centerX = view.bounds.width / 2
 		navigationController?.toolbar.hidden = true
@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController
 		{
 			let textField = UITextField()
 			textField.textAlignment = .Center
-			textField.textColor = UIColor.whiteColor()
+			textField.textColor = UIColor.blackColor()
 			textField.autocapitalizationType = UITextAutocapitalizationType.None
 			textField.autocorrectionType = UITextAutocorrectionType.No
 			textField.borderStyle = UITextBorderStyle.None
@@ -82,7 +82,7 @@ class SignUpViewController: UIViewController
 		textFields[TextFieldType.LastName.rawValue].attributedPlaceholder = NSAttributedString(string: "Last Name", attributes: attributes)
 		textFields[TextFieldType.LastName.rawValue].autocapitalizationType = UITextAutocapitalizationType.Words
 		
-		textFields[TextFieldType.Email.rawValue].attributedPlaceholder = NSAttributedString(string: "UM Uniqname", attributes: attributes)
+		textFields[TextFieldType.Email.rawValue].attributedPlaceholder = NSAttributedString(string: "Email Address", attributes: attributes)
 		textFields[TextFieldType.Email.rawValue].keyboardType = UIKeyboardType.EmailAddress
 		
 		textFields[TextFieldType.PhoneNumber.rawValue].attributedPlaceholder = NSAttributedString(string: "Phone Number", attributes: attributes)
@@ -151,21 +151,21 @@ class SignUpViewController: UIViewController
 		user["firstName"] = textFields[TextFieldType.FirstName.rawValue].text
 		user["lastName"] = textFields[TextFieldType.LastName.rawValue].text
 		user.signUpInBackgroundWithBlock
-		{ (succeeded: Bool!, error: NSError!) -> Void in
-			if (error == nil && succeeded!)
-			{
-				// Hooray! Let them use the app now.
-				self.navigationController?.popToRootViewControllerAnimated(true)
-			}
-			else
-			{
-				let errorString = error.userInfo!["error"] as String
-				// Show the errorString somewhere and let the user try again.
-				var alert = UIAlertController(title: "Woah! Something went awfully wrong. Please try again.", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
-				let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: nil)
-				alert.addAction(dismissAction)
-				self.presentViewController(alert, animated: true, completion: nil)
-			}
+			{ (succeeded: Bool!, error: NSError!) -> Void in
+				if (error == nil && succeeded!)
+				{
+					// Hooray! Let them use the app now.
+					self.navigationController?.popToRootViewControllerAnimated(true)
+				}
+				else
+				{
+					let errorString = error.userInfo!["error"] as String
+					// Show the errorString somewhere and let the user try again.
+					var alert = UIAlertController(title: "Woah! Something went awfully wrong. Please try again.", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
+					let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: nil)
+					alert.addAction(dismissAction)
+					self.presentViewController(alert, animated: true, completion: nil)
+				}
 		}
 	}
 	

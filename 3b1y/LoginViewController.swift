@@ -27,6 +27,21 @@ class LoginViewController: UIViewController
 		if (username.text.isEmpty)
 		{
 			username.shakeForInvalidInput()
+			return
+		}
+		if(Array(password.text).count<6)
+		{
+			password.shakeForInvalidInput()
+			return
+		}
+		
+		PFUser.logInWithUsernameInBackground(username.text, password:password.text) {
+			(user: PFUser!, error: NSError!) -> Void in
+			if user != nil {
+				self.navigationController?.popToRootViewControllerAnimated(true)
+			} else {
+				self.password.shakeForInvalidInput()
+			}
 		}
 	}
 	@IBAction func facebookLogin(sender: UIButton)

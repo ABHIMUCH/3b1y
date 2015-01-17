@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J0q-MO-bRJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pyi-5Z-9FN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="9ic-yL-bgZ">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_b1y" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <collectionViewController id="3pV-h1-4wu" customClass="ViewController" customModule="_b1y" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Oat-Jb-vIC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="hs7-sB-p4q"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="E90-jq-8po">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qba-vG-Aj2">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="3pV-h1-4wu" id="zVM-JR-QhL"/>
+                            <outlet property="delegate" destination="3pV-h1-4wu" id="b6J-Mo-wfm"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="NU5-3T-bf5"/>
                     <connections>
-                        <segue destination="eFr-ob-0RJ" kind="show" identifier="login" id="jEW-Ej-DcE"/>
+                        <segue destination="eFr-ob-0RJ" kind="show" identifier="login" id="qO9-ya-7wf"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="phU-e5-D1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="-339"/>
+            <point key="canvasLocation" x="1282" y="-526"/>
         </scene>
         <!--Add Collaborator View Controller-->
         <scene sceneID="iyQ-cF-8gz">
@@ -43,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPP-MT-fWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1882" y="208"/>
+            <point key="canvasLocation" x="2342" y="-348"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="0QA-yg-eQO">
@@ -128,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="2336" y="-1182"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="hyh-QC-Y1x">
             <objects>
-                <viewController id="4zx-Zw-j3a" sceneMemberID="viewController">
+                <viewController id="4zx-Zw-j3a" customClass="SignUpViewController" customModule="_b1y" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VMG-dO-HCo"/>
                         <viewControllerLayoutGuide type="bottom" id="HpD-r0-Ajy"/>
@@ -144,25 +160,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QzY-2E-0L2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3044" y="-1194"/>
+            <point key="canvasLocation" x="3112" y="-1174"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="gsD-tb-KD1">
+        <scene sceneID="AxN-ZQ-WNN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J0q-MO-bRJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pyi-5Z-9FN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bgb-Ik-FV4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zid-Gj-Jov">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rFy-0r-la6"/>
+                        <segue destination="3pV-h1-4wu" kind="relationship" relationship="rootViewController" id="WW6-DS-AOJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkR-bD-AiI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="psD-Uu-ttG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="398" y="-339"/>
+            <point key="canvasLocation" x="470" y="-526"/>
         </scene>
     </scenes>
 </document>
