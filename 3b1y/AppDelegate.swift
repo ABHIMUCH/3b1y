@@ -79,7 +79,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 					return
 				}
 				session = thisSession
-				cachedViewController.loadSpotify()
+				if (cachedViewController != nil)
+				{
+					cachedViewController.loadSpotify()
+				}
+				cachedViewController = nil
 				//[self playUsingSession:session];
 			})
 			return true
