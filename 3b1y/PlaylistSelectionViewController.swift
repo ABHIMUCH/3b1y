@@ -61,7 +61,7 @@ extension PlaylistSelectionViewController : UITableViewDataSource, UITableViewDe
 
 		SPTRequest.requestItemAtURI(playlist.uri, withSession: session, callback: {(error, plist) in
 			let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("SongList") as SongSelectionViewController
-			 println(plist)
+			 viewController.playlist = plist as SPTPlaylistSnapshot
 			self.navigationController?.pushViewController(viewController, animated: true)
 		})
 		
