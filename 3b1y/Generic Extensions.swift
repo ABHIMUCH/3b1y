@@ -177,7 +177,7 @@ func log <T: DebugPrintable> (value: T)
 	println("\(dateFormatter.stringFromDate(date)):  Fatal problem that hasn't been tended to: \(value)")
 }
 
-let hostingURL = NSURL(string: "")
+let hostingURL = NSURL(string: "https://m3b1y.herokuapp.com")
 
 /**
 Use this function to navigate to Spotify to authenticate a user.
