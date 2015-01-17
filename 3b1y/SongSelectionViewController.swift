@@ -16,5 +16,5 @@ struct Song
 }
 class SongSelectionViewController: UITableViewController
 {
-
+    var playlist : SPTPartialPlaylist!
 }

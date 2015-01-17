@@ -10,7 +10,7 @@ import UIKit
 
 class SongCell: UITableViewCell
 {
-	@IBOutlet var image : UIImageView!
+	@IBOutlet var albumArtwork : UIImageView!
 	@IBOutlet var songName : UILabel!
 	@IBOutlet var artistName : UILabel!
 	@IBOutlet var albumName: UILabel!
@@ -19,6 +19,6 @@ class SongCell: UITableViewCell
 class PlaylistCell : UITableViewCell
 {
 	@IBOutlet var playlistName: UILabel!
-	@IBOutlet var trackNumber: UILabel!
+	@IBOutlet var trackCount: UILabel!
 	@IBOutlet var playlistOwner: UILabel!
 }
