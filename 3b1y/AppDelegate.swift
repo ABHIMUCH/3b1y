@@ -21,12 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		Parse.setApplicationId("UWmbYVob4Fsvh8HuIMRJdZohqTBZGqo0KCH3wdir", clientKey: "iVNhdAS3VHrX5XDpumTyp07mlsJg3ftVADCjCh1A")
 		PFFacebookUtils.initializeFacebook()
 		// [Optional] Track statistics around application opens.
-		PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: {(completed, error) in })
+		//PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: {(completed, error) in })
 		var userNotifcationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
 		// Register for Push Notitications
 		var settings = UIUserNotificationSettings(forTypes: userNotifcationTypes, categories: nil)
 		application.registerUserNotificationSettings(settings)
 		application.registerForRemoteNotifications()
+		
 		return true
 	}
 
@@ -55,20 +56,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 	func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject])
 	{
-		//PFPush.handlePush(userInfo)
+		PFPush.handlePush(userInfo)
 	}
 	func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData)
 	{
 		// Store the deviceToken in the current installation and save it to Parse.
-		/*var currentInstallation = PFInstallation.currentInstallation()
+		var currentInstallation = PFInstallation.currentInstallation()
 		currentInstallation.setDeviceTokenFromData(deviceToken)
 		currentInstallation.channels = ["global"]
-		currentInstallation.saveInBackgroundWithBlock({(completed, error) in })*/
+		currentInstallation.saveInBackgroundWithBlock({(completed, error) in })
 	}
 	func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool
 	{
 		// Ask SPTAuth if the URL given is a Spotify authentication callback
-		println(url)
 		if (SPTAuth.defaultInstance().canHandleURL(url, withDeclaredRedirectURL: NSURL(string: "m3b1y://")))
 		{
 			// Call the token swap service to get a logged in session

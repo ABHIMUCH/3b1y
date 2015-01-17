@@ -155,7 +155,7 @@ class SignUpViewController: UIViewController
 			if (error == nil && succeeded!)
 			{
 				// Hooray! Let them use the app now.
-				self.navigationController?.popViewControllerAnimated(true)
+				self.navigationController?.popToRootViewControllerAnimated(true)
 			}
 			else
 			{

@@ -36,15 +36,16 @@ class LoginViewController: UIViewController
 			(user: PFUser!, error: NSError!) -> Void in
 			if user == nil
 			{
-				NSLog("Uh oh. The user cancelled the Facebook login.")
+				println("Uh oh. The user cancelled the Facebook login.")
 			}
 			else if user.isNew
 			{
-				NSLog("User signed up and logged in through Facebook!")
+				
+				self.navigationController?.popToRootViewControllerAnimated(true)
 			}
 			else
 			{
-				
+				self.navigationController?.popToRootViewControllerAnimated(true)
 			}
 		})
 	}
