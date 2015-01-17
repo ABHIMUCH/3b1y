@@ -21,27 +21,48 @@ class ViewController: UICollectionViewController
 	}
 	override func viewDidAppear(animated: Bool)
 	{
+		cachedViewController = self
 		super.viewDidAppear(animated)
 		/*if (PFUser.currentUser() == nil)
 		{
 			performSegueWithIdentifier("login", sender: self)
 		}*/
-		if (session == nil || !session.isValid())
+		if (session == nil || PFUser.currentUser() == nil)
 		{
 			authenticateSpotify()
 			//TODO: Reload session.
 		}
+		else if (!session.isValid())
+		{
+			//TODO: Reload session.
+			log("Please learn how to reload the session.")
+		}
+		
+	}
+	
+	override func didReceiveMemoryWarning()
+	{
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
+	func loadSpotify()
+	{
+		if (PFUser.currentUser() != nil)
+		{
+			loadContent()
+			return
+		}
 		SPTRequest.userInformationForUserInSession(session, callback: {(error, user) in
-			if (error != nil)
+			if (error == nil)
 			{
 				if (PFUser.currentUser() == nil)
 				{
-					let parseUser = PFUser(className: "User")
+					let parseUser = PFUser()
 					parseUser.username = (user as SPTUser).canonicalUserName
 					parseUser.password = "defaultPassword"
 					parseUser.email = (user as SPTUser).emailAddress
 					parseUser["name"] = (user as SPTUser).displayName
-					parseUser["spotifyURI"] = (user as SPTUser).uri
+					parseUser["spotifyURI"] = (user as SPTUser).uri.absoluteString
 					parseUser.signUpInBackgroundWithBlock({(completed, error) in
 						if (completed && error == nil)
 						{
@@ -61,13 +82,6 @@ class ViewController: UICollectionViewController
 			}
 		})
 	}
-	
-	override func didReceiveMemoryWarning()
-	{
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-	
 	func loadContent()
 	{
 		let query = PFQuery(className: "Collaborator")
@@ -88,21 +102,26 @@ class ViewController: UICollectionViewController
 			{
 				self.noResultsFound()
 			}
-			self.collectionView?.reloadData()
+			else
+			{
+				self.collectionView?.reloadData()
+			}
 		})
 	}
 }
 
-extension ViewController : UICollectionViewDataSource
+extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate
 {
 	func noResultsFound()
 	{
 		let label = UILabel()
 		label.text = "No Active Sessions Found."
+		label.font = UIFont.systemFontOfSize(18)
 		label.sizeToFit()
+		label.textColor = UIColor.whiteColor()
 		label.center = view.center
-		label.font = UIFont.systemFontOfSize(14)
 		view.addSubview(label)
+		view.bringSubviewToFront(label)
 		self.collectionView?.removeFromSuperview()
 	}
 	

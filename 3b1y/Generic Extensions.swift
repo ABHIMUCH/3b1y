@@ -174,7 +174,7 @@ func log <T: DebugPrintable> (value: T)
 }
 
 var session : SPTSession!
-
+var cachedViewController: ViewController!
 let clientID = "e6695c6d22214e0f832006889566df9c"
 let hostingURL = NSURL(string: "https://peaceful-sierra-1249.herokuapp.com/swap")
 let callbackURL = NSURL(string: "spotifyiossdkexample://")

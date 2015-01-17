@@ -99,6 +99,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xbI-TX-HNd"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="Oat-Jb-vIC" id="103-cf-Jxs"/>
                         <segue destination="eFr-ob-0RJ" kind="show" identifier="login" id="qO9-ya-7wf"/>
                     </connections>
                 </collectionViewController>
