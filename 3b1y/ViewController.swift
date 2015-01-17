@@ -122,7 +122,7 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate
 		label.center = view.center
 		view.addSubview(label)
 		view.bringSubviewToFront(label)
-		self.collectionView?.removeFromSuperview()
+		//self.collectionView?.removeFromSuperview()
 	}
 	
 	override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
@@ -189,6 +189,12 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate
 	}
 	func checkRequests(sender: UIButton)
 	{
+		
+	}
+	@IBAction func createSession(sender: UIBarButtonItem)
+	{
+		//TODO: Add the sesh to Parse
+		performSegueWithIdentifier("sessionCreate", sender: self)
 		
 	}
 }

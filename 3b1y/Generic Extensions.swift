@@ -178,7 +178,7 @@ var cachedViewController: ViewController!
 let clientID = "e6695c6d22214e0f832006889566df9c"
 let hostingURL = NSURL(string: "https://peaceful-sierra-1249.herokuapp.com/swap")
 let callbackURL = NSURL(string: "spotifyiossdkexample://")
-let selectedScopes = [SPTAuthPlaylistModifyPrivateScope]
+let selectedScopes = [SPTAuthUserReadEmailScope, SPTAuthPlaylistReadPrivateScope, SPTAuthStreamingScope]
 /**
 Use this function to navigate to Spotify to authenticate a user.
 */

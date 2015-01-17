@@ -95,66 +95,42 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="NU5-3T-bf5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xbI-TX-HNd"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xbI-TX-HNd">
+                            <connections>
+                                <segue destination="Yav-ne-Fsy" kind="show" id="9hB-Lk-jGC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="Pev-cS-9E1" kind="show" identifier="sessionCreate" id="10R-9d-UUd"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phU-e5-D1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1278" y="-526"/>
         </scene>
-        <!--Add Other Users-->
-        <scene sceneID="sIr-j5-0hR">
+        <!--Song Selection View Controller-->
+        <scene sceneID="bCa-gs-aFv">
             <objects>
-                <tableViewController title="Add Other Users" id="Pev-cS-9E1" customClass="AddCollaboratorViewController" customModule="_b1y" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="W8Q-1H-wWB">
+                <tableViewController id="Yav-ne-Fsy" customClass="SongSelectionViewController" customModule="_b1y" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6Tp-Hi-iIZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Search for Friends" id="qWW-NY-Nvf">
-                            <rect key="frame" x="0.0" y="-1" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" textLabel="VbU-cK-HaS" detailTextLabel="uUq-8M-mbE" rowHeight="56" style="IBUITableViewCellStyleSubtitle" id="6YQ-jw-uox">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bGz-Df-BHx">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6YQ-jw-uox" id="poi-fP-tjm">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bGz-Df-BHx" id="0LP-0k-fQ2">
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VbU-cK-HaS">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uUq-8M-mbE">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Pev-cS-9E1" id="1M6-cd-iaZ"/>
-                            <outlet property="delegate" destination="Pev-cS-9E1" id="cJh-3m-006"/>
+                            <outlet property="dataSource" destination="Yav-ne-Fsy" id="FMb-06-X9a"/>
+                            <outlet property="delegate" destination="Yav-ne-Fsy" id="ySM-BM-XSy"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <outlet property="searchBar" destination="qWW-NY-Nvf" id="ork-qy-CT6"/>
-                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1so-so-7Vr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c9u-Cv-sDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2169" y="-117"/>
+            <point key="canvasLocation" x="2020" y="-524"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AxN-ZQ-WNN">

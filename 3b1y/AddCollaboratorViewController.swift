@@ -12,7 +12,8 @@ class AddCollaboratorViewController: UITableViewController
 {
     var potentialUsers = [PFUser]()
     @IBOutlet var searchBar : UISearchBar!
-    func users (input : String) {
+	
+	func users (input : String) {
         if (input.isEmpty)
         {
             displayNoResults()
@@ -20,7 +21,7 @@ class AddCollaboratorViewController: UITableViewController
         }
         let query1 = PFQuery()
         query1.whereKey("email", hasPrefix: input)
-        
+		
         let query2 = PFQuery()
         query2.whereKey("name", hasPrefix: input)
         
@@ -42,20 +43,10 @@ class AddCollaboratorViewController: UITableViewController
                     self.potentialUsers = objects as [PFUser]
                     self.tableView.reloadData()
                 }
-                /*
-                if (objects.count == 0)
-                {
-                //No results found.
-                }
-                for object in objects
-                {
-                //Results found. Save them in a list allowing the user to choose from them.
-                }*/
             } else
             {
                 // Log details of the failure
                 UIAlertController.displayError(error, self)
-                
             }
         }
     }
@@ -69,7 +60,7 @@ class AddCollaboratorViewController: UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		//self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         searchBar.delegate = self
     }
     
@@ -103,7 +94,8 @@ extension AddCollaboratorViewController : UISearchBarDelegate
 {
     func searchBarTextDidBeginEditing(searchBar: UISearchBar)
     {
-        users(searchBar.text)
+		log(searchBar.text)
+		users(searchBar.text)
     }
 
     
