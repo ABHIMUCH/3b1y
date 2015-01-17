@@ -27,6 +27,7 @@
 		82C53F091A6A7D2E003603B3 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C53F041A6A6D1F003603B3 /* ParseFacebookUtils.framework */; };
 		82C53F0A1A6A7D2E003603B3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C53F001A6A6C61003603B3 /* Bolts.framework */; };
 		82C53F0C1A6A7EAA003603B3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C53F0B1A6A7EAA003603B3 /* SignUpViewController.swift */; };
+		82C53F0E1A6A91C7003603B3 /* AddCollaboratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C53F0D1A6A91C7003603B3 /* AddCollaboratorViewController.swift */; };
 		82E741691A6A018900BF3D58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E741681A6A018900BF3D58 /* AppDelegate.swift */; };
 		82E7416B1A6A018900BF3D58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7416A1A6A018900BF3D58 /* ViewController.swift */; };
 		82E7416E1A6A018900BF3D58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82E7416C1A6A018900BF3D58 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		82C53F041A6A6D1F003603B3 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		82C53F061A6A6E08003603B3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		82C53F0B1A6A7EAA003603B3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		82C53F0D1A6A91C7003603B3 /* AddCollaboratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollaboratorViewController.swift; sourceTree = "<group>"; };
 		82E741631A6A018900BF3D58 /* 3b1y.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3b1y.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E741671A6A018900BF3D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82E741681A6A018900BF3D58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				82E7416C1A6A018900BF3D58 /* Main.storyboard */,
 				82C53F0B1A6A7EAA003603B3 /* SignUpViewController.swift */,
 				82C53EF81A6A5E84003603B3 /* LoginViewController.swift */,
+				82C53F0D1A6A91C7003603B3 /* AddCollaboratorViewController.swift */,
 				82E7416F1A6A018900BF3D58 /* Images.xcassets */,
 				82E741711A6A018900BF3D58 /* LaunchScreen.xib */,
 				82E741661A6A018900BF3D58 /* Supporting Files */,
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C53F0E1A6A91C7003603B3 /* AddCollaboratorViewController.swift in Sources */,
 				82C53EF91A6A5E84003603B3 /* LoginViewController.swift in Sources */,
 				82E7416B1A6A018900BF3D58 /* ViewController.swift in Sources */,
 				825B67E31A6A2B8B006CE04E /* Generic Extensions.swift in Sources */,

@@ -208,4 +208,21 @@ func authenticateSpotify()
 	UIApplication.sharedApplication().openURL(loginURL!)
 }
 
+extension UIAlertController
+{
+	/**
+	Use this function as a generic error displayer for the user. It displays a UIAlertController.
+	
+	:param: error      The NSError that was generated.
+	:param: controller The ViewController currently on the screen. Pass this in so that the function knows where to present the alert.
+	*/
+	class func displayError(error: NSError, _ controller: UIViewController)
+	{
+		let dictionary = NSDictionary(dictionary: error.userInfo!)
+		let message = dictionary.valueForKey(NSLocalizedFailureReasonErrorKey) as String
+		let alertController = UIAlertController(title: "We're sorry. An Error Occurred", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+		alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
+		controller.presentViewController(alertController, animated: true, completion: nil)
+	}
+}
 

@@ -14,11 +14,34 @@ class ViewController: UIViewController
 	{
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		
+	}
+	override func viewDidAppear(animated: Bool)
+	{
+		super.viewDidAppear(animated)
 		if (PFUser.currentUser() == nil)
 		{
 			performSegueWithIdentifier("login", sender: self)
 		}
+		if (!session.isValid())
+		{
+			//TODO: Reload session.
+		}
+		SPTRequest.userInformationForUserInSession(session, callback: {(error, user) in
+			if (error != nil)
+			{
+				if ((PFUser.currentUser()["spotifyURI"] as String).isEmpty)
+				{
+					PFUser.currentUser()["spotifyURI"] = (user as SPTUser)
+				}
+			}
+			else
+			{
+				UIAlertController.displayError(error, self)
+			}
+		})
 	}
+	
 	override func didReceiveMemoryWarning()
 	{
 		super.didReceiveMemoryWarning()
