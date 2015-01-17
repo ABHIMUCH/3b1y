@@ -11,10 +11,18 @@ import UIKit
 class HostSelectSongsViewController: UITableViewController
 {
 
-    func getSongs(){
+    func getSongs(inputedSession: String){
+        var query = PFQuery(className:"Activity")
+        query.whereKey("session", equalTo: inputedSession)
         
-  
         
+    query.findObjectsInBackgroundWithBlock {(objects: [AnyObject]!, error: NSError!) -> Void in
+       
+        var songQuery = PfQ
+        
+        
+        
+        }
         
     }
 
