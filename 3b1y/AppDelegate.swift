@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	{
 		// Ask SPTAuth if the URL given is a Spotify authentication callback
 		println(url)
-		if (SPTAuth.defaultInstance().canHandleURL(url, withDeclaredRedirectURL: NSURL(string: "m3b1y://spotifyauthentication")))
+		if (SPTAuth.defaultInstance().canHandleURL(url, withDeclaredRedirectURL: NSURL(string: "m3b1y://")))
 		{
 			// Call the token swap service to get a logged in session
 			SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, tokenSwapServiceEndpointAtURL: hostingURL, callback: {(error, session) in

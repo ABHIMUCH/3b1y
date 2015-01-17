@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>FacebookAppID</key>
-	<string>771554339603453</string>
-	<key>FacebookDisplayName</key>
-	<string>IMDJ</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -32,12 +28,15 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>m3b1y</string>
-				<string>fb771554339603453</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>771554339603453</string>
+	<key>FacebookDisplayName</key>
+	<string>IMDJ</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
