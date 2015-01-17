@@ -21,6 +21,13 @@
 		825B67DB1A6A2082006CE04E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B67D81A6A2082006CE04E /* Parse.framework */; };
 		825B67DC1A6A2082006CE04E /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B67D91A6A2082006CE04E /* ParseFacebookUtils.framework */; };
 		825B67E31A6A2B8B006CE04E /* Generic Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825B67E21A6A2B8B006CE04E /* Generic Extensions.swift */; };
+		825B67E51A6A2FA9006CE04E /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B67E41A6A2FA9006CE04E /* Spotify.framework */; };
+		825B67E61A6A2FA9006CE04E /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B67E41A6A2FA9006CE04E /* Spotify.framework */; };
+		825B67E81A6A32D9006CE04E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B67E71A6A32D9006CE04E /* AVFoundation.framework */; };
+		825B67EB1A6A379E006CE04E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B67E91A6A379E006CE04E /* FacebookSDK.framework */; };
+		825B67EC1A6A379E006CE04E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B67E91A6A379E006CE04E /* FacebookSDK.framework */; };
+		825B67ED1A6A379E006CE04E /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B67EA1A6A379E006CE04E /* FBAudienceNetwork.framework */; };
+		825B67EE1A6A379E006CE04E /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B67EA1A6A379E006CE04E /* FBAudienceNetwork.framework */; };
 		82E741691A6A018900BF3D58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E741681A6A018900BF3D58 /* AppDelegate.swift */; };
 		82E7416B1A6A018900BF3D58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7416A1A6A018900BF3D58 /* ViewController.swift */; };
 		82E7416E1A6A018900BF3D58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82E7416C1A6A018900BF3D58 /* Main.storyboard */; };
@@ -55,6 +62,10 @@
 		825B67D91A6A2082006CE04E /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		825B67DE1A6A20F6006CE04E /* 3b1y-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "3b1y-Bridging-Header.h"; path = "3b1y/3b1y-Bridging-Header.h"; sourceTree = "<group>"; };
 		825B67E21A6A2B8B006CE04E /* Generic Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Generic Extensions.swift"; sourceTree = "<group>"; };
+		825B67E41A6A2FA9006CE04E /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		825B67E71A6A32D9006CE04E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		825B67E91A6A379E006CE04E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		825B67EA1A6A379E006CE04E /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		82E741631A6A018900BF3D58 /* 3b1y.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3b1y.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E741671A6A018900BF3D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82E741681A6A018900BF3D58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				825B67E81A6A32D9006CE04E /* AVFoundation.framework in Frameworks */,
 				825B67D61A6A2045006CE04E /* libsqlite3.dylib in Frameworks */,
+				825B67ED1A6A379E006CE04E /* FBAudienceNetwork.framework in Frameworks */,
 				825B67D41A6A203D006CE04E /* libz.dylib in Frameworks */,
 				825B67CB1A6A2031006CE04E /* AudioToolbox.framework in Frameworks */,
 				825B67CC1A6A2031006CE04E /* CFNetwork.framework in Frameworks */,
@@ -81,8 +94,10 @@
 				825B67CF1A6A2031006CE04E /* QuartzCore.framework in Frameworks */,
 				825B67D01A6A2031006CE04E /* Security.framework in Frameworks */,
 				825B67DA1A6A2082006CE04E /* Bolts.framework in Frameworks */,
+				825B67E51A6A2FA9006CE04E /* Spotify.framework in Frameworks */,
 				825B67D11A6A2031006CE04E /* StoreKit.framework in Frameworks */,
 				825B67DB1A6A2082006CE04E /* Parse.framework in Frameworks */,
+				825B67EB1A6A379E006CE04E /* FacebookSDK.framework in Frameworks */,
 				825B67D21A6A2031006CE04E /* SystemConfiguration.framework in Frameworks */,
 				825B67DC1A6A2082006CE04E /* ParseFacebookUtils.framework in Frameworks */,
 			);
@@ -92,6 +107,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				825B67EE1A6A379E006CE04E /* FBAudienceNetwork.framework in Frameworks */,
+				825B67E61A6A2FA9006CE04E /* Spotify.framework in Frameworks */,
+				825B67EC1A6A379E006CE04E /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +120,13 @@
 			isa = PBXGroup;
 			children = (
 				825B67DE1A6A20F6006CE04E /* 3b1y-Bridging-Header.h */,
+				825B67E41A6A2FA9006CE04E /* Spotify.framework */,
 				825B67D51A6A2045006CE04E /* libsqlite3.dylib */,
 				825B67D31A6A203D006CE04E /* libz.dylib */,
+				825B67EA1A6A379E006CE04E /* FBAudienceNetwork.framework */,
+				825B67E91A6A379E006CE04E /* FacebookSDK.framework */,
 				825B67C31A6A2031006CE04E /* AudioToolbox.framework */,
+				825B67E71A6A32D9006CE04E /* AVFoundation.framework */,
 				825B67C41A6A2031006CE04E /* CFNetwork.framework */,
 				825B67C51A6A2031006CE04E /* CoreGraphics.framework */,
 				825B67C61A6A2031006CE04E /* MobileCoreServices.framework */,
@@ -413,6 +435,7 @@
 				);
 				INFOPLIST_FILE = 3b1y/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "3b1y/3b1y-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -431,6 +454,7 @@
 				);
 				INFOPLIST_FILE = 3b1y/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "3b1y/3b1y-Bridging-Header.h";
 			};
@@ -444,6 +468,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -464,6 +489,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = 3b1yTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

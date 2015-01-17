@@ -70,5 +70,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		currentInstallation.channels = ["global"]
 		currentInstallation.saveInBackgroundWithBlock({(completed, error) in })
 	}
+	func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool
+	{
+		// Ask SPTAuth if the URL given is a Spotify authentication callback
+		if (SPTAuth.defaultInstance().canHandleURL(url, withDeclaredRedirectURL: hostingURL))
+		{
+			// Call the token swap service to get a logged in session
+			SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, tokenSwapServiceEndpointAtURL: hostingURL, callback: {(error, session) in
+				if (error != nil)
+				{
+					log("Authentication Error! HELP!!!: \(error)")
+					return
+				}
+				//[self playUsingSession:session];
+			})
+			return true
+		}
+		return false
+	}
 }
 

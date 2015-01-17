@@ -150,7 +150,12 @@ extension String
 		return number
 	}
 }
+/**
+Use this function to print any errors that have not be dealt with but you want to print to the command line so that everyone knows something went wrong.
 
+:param: value Pass in anything in here from a string to an int or even your object. Just make sure it follows the Printable protocol.
+:see: log <T: DebugPrintable>
+*/
 func log <T: Printable> (value: T)
 {
 	let date = NSDate(timeIntervalSinceNow: 0)
@@ -158,6 +163,12 @@ func log <T: Printable> (value: T)
 	dateFormatter.dateStyle = .FullStyle
 	println("\(dateFormatter.stringFromDate(date)):  Fatal problem that hasn't been tended to: \(value)")
 }
+/**
+Use this function to print any errors that have not be dealt with but you want to print to the command line so that everyone knows something went wrong.
+
+:param: value Pass in anything in here from a string to an int or even your object. Just make sure it follows the DebugPrintable protocol.
+:see: log <T: Printable>
+*/
 func log <T: DebugPrintable> (value: T)
 {
 	let date = NSDate(timeIntervalSinceNow: 0)
@@ -165,4 +176,18 @@ func log <T: DebugPrintable> (value: T)
 	dateFormatter.dateStyle = .FullStyle
 	println("\(dateFormatter.stringFromDate(date)):  Fatal problem that hasn't been tended to: \(value)")
 }
+
+let hostingURL = NSURL(string: "")
+
+/**
+Use this function to navigate to Spotify to authenticate a user.
+*/
+func authenticateSpotify()
+{
+	let auth = SPTAuth.defaultInstance()
+	
+	let loginURL = auth.loginURLForClientId("7e0d924d7ec24f908450665879db2d3f", declaredRedirectURL: hostingURL, scopes: [SPTAuthPlaylistModifyPrivateScope]) //TODO: Add scopes as required
+	UIApplication.sharedApplication().openURL(loginURL)
+}
+
 
