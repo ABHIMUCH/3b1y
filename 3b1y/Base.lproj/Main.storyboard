@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pyi-5Z-9FN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pyi-5Z-9FN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -115,52 +115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" rowHeight="100" id="bGz-Df-BHx" customClass="SongCell" customModule="_b1y" customModuleProvider="target">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bGz-Df-BHx" id="0LP-0k-fQ2">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuf-HJ-vRD">
-                                            <rect key="frame" x="8" y="9" width="83" height="83"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="83" id="90B-ok-5U0"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5u-Xt-O9m">
-                                            <rect key="frame" x="99" y="8" width="154" height="36"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odj-hn-jMl">
-                                            <rect key="frame" x="99" y="70" width="100" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkd-Yr-au1">
-                                            <rect key="frame" x="99" y="43" width="41" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="cuf-HJ-vRD" firstAttribute="leading" secondItem="0LP-0k-fQ2" secondAttribute="leadingMargin" id="Dwn-bI-JhS"/>
-                                        <constraint firstItem="C5u-Xt-O9m" firstAttribute="leading" secondItem="cuf-HJ-vRD" secondAttribute="trailing" constant="8" symbolic="YES" id="GZN-7J-wg0"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="cuf-HJ-vRD" secondAttribute="bottom" id="JHS-MY-Oc1"/>
-                                        <constraint firstItem="cuf-HJ-vRD" firstAttribute="top" secondItem="0LP-0k-fQ2" secondAttribute="topMargin" id="Lfd-vS-5OD"/>
-                                        <constraint firstItem="cuf-HJ-vRD" firstAttribute="top" secondItem="C5u-Xt-O9m" secondAttribute="top" id="STh-Vb-XnB"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="albumName" destination="odj-hn-jMl" id="DgQ-eN-Z8p"/>
-                                    <outlet property="artistName" destination="kkd-Yr-au1" id="0pD-dR-zuI"/>
-                                    <outlet property="image" destination="cuf-HJ-vRD" id="okF-IC-e8Y"/>
-                                    <outlet property="songName" destination="C5u-Xt-O9m" id="lES-hg-shN"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playlistCell" rowHeight="70" id="INL-z3-6MO" customClass="PlaylistCell" customModule="_b1y" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="playlistCell" rowHeight="70" id="INL-z3-6MO" customClass="PlaylistCell" customModule="_b1y" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="INL-z3-6MO" id="00B-3r-bQD">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -174,7 +129,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Playlist Owner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTE-W9-6aX">
                                             <rect key="frame" x="124" y="40" width="110" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Playlist Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-bW-ocm">
@@ -197,10 +152,78 @@
                             <outlet property="delegate" destination="Yav-ne-Fsy" id="ySM-BM-XSy"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="2tE-Sg-QOQ" kind="show" identifier="showPlaylist" id="fCB-tM-jav"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9u-Cv-sDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2020" y="-531"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Zkd-3V-sSz">
+            <objects>
+                <tableViewController id="2tE-Sg-QOQ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DIK-v4-hFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" rowHeight="100" id="hqP-eW-f9R" customClass="SongCell" customModule="_b1y" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hqP-eW-f9R" id="iK4-nu-Pm2">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sb-73-bEO">
+                                            <rect key="frame" x="8" y="9" width="83" height="83"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="83" id="LZv-R8-eJH"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xci-dN-d9N">
+                                            <rect key="frame" x="99" y="8" width="154" height="36"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFO-eA-xWq">
+                                            <rect key="frame" x="99" y="70" width="100" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OW4-rl-fNX">
+                                            <rect key="frame" x="99" y="43" width="41" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3sb-73-bEO" firstAttribute="leading" secondItem="iK4-nu-Pm2" secondAttribute="leadingMargin" id="Mkd-ix-FHi"/>
+                                        <constraint firstItem="3sb-73-bEO" firstAttribute="top" secondItem="iK4-nu-Pm2" secondAttribute="topMargin" id="Z1G-Kg-IoF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="3sb-73-bEO" secondAttribute="bottom" id="o41-sZ-pVA"/>
+                                        <constraint firstItem="xci-dN-d9N" firstAttribute="leading" secondItem="3sb-73-bEO" secondAttribute="trailing" constant="8" symbolic="YES" id="wXS-ix-RxB"/>
+                                        <constraint firstItem="3sb-73-bEO" firstAttribute="top" secondItem="xci-dN-d9N" secondAttribute="top" id="zMG-rd-gnU"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="albumName" destination="rFO-eA-xWq" id="zvv-RC-T3p"/>
+                                    <outlet property="artistName" destination="OW4-rl-fNX" id="gwr-6N-h9Q"/>
+                                    <outlet property="image" destination="3sb-73-bEO" id="zgV-PQ-JCB"/>
+                                    <outlet property="songName" destination="xci-dN-d9N" id="dY3-cl-Lvm"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2tE-Sg-QOQ" id="1y8-LS-D0Z"/>
+                            <outlet property="delegate" destination="2tE-Sg-QOQ" id="t1Y-UJ-Lcq"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2pw-Rv-imh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2673" y="-531"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AxN-ZQ-WNN">

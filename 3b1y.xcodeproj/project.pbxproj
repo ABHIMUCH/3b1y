@@ -37,7 +37,8 @@
 		82E741701A6A018900BF3D58 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82E7416F1A6A018900BF3D58 /* Images.xcassets */; };
 		82E741731A6A018900BF3D58 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E741711A6A018900BF3D58 /* LaunchScreen.xib */; };
 		82E7417F1A6A018900BF3D58 /* _b1yTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7417E1A6A018900BF3D58 /* _b1yTests.swift */; };
-		82FF911B1A6AF41D0075579E /* SongSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FF911A1A6AF41D0075579E /* SongSelectionViewController.swift */; };
+		82FF911B1A6AF41D0075579E /* PlaylistSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FF911A1A6AF41D0075579E /* PlaylistSelectionViewController.swift */; };
+		CD02AF281A6B09B30064C4E3 /* SongSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD02AF271A6B09B30064C4E3 /* SongSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +86,8 @@
 		82E741781A6A018900BF3D58 /* 3b1yTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3b1yTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E7417D1A6A018900BF3D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82E7417E1A6A018900BF3D58 /* _b1yTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _b1yTests.swift; sourceTree = "<group>"; };
-		82FF911A1A6AF41D0075579E /* SongSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongSelectionViewController.swift; sourceTree = "<group>"; };
+		82FF911A1A6AF41D0075579E /* PlaylistSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistSelectionViewController.swift; sourceTree = "<group>"; };
+		CD02AF271A6B09B30064C4E3 /* SongSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +192,8 @@
 				82E741681A6A018900BF3D58 /* AppDelegate.swift */,
 				825B67E21A6A2B8B006CE04E /* Generic Extensions.swift */,
 				82E7416C1A6A018900BF3D58 /* Main.storyboard */,
-				82FF911A1A6AF41D0075579E /* SongSelectionViewController.swift */,
+				82FF911A1A6AF41D0075579E /* PlaylistSelectionViewController.swift */,
+				CD02AF271A6B09B30064C4E3 /* SongSelectionViewController.swift */,
 				82E7416A1A6A018900BF3D58 /* ViewController.swift */,
 				8250B8271A6ADC1300C971B7 /* Custom Views */,
 				8250B8261A6ADC0C00C971B7 /* Model */,
@@ -340,8 +343,9 @@
 			files = (
 				82C53F101A6A99D6003603B3 /* Session.swift in Sources */,
 				82C53F121A6A9AF9003603B3 /* Collaborator.swift in Sources */,
+				CD02AF281A6B09B30064C4E3 /* SongSelectionViewController.swift in Sources */,
 				82C53F141A6AA87D003603B3 /* SessionCellView.swift in Sources */,
-				82FF911B1A6AF41D0075579E /* SongSelectionViewController.swift in Sources */,
+				82FF911B1A6AF41D0075579E /* PlaylistSelectionViewController.swift in Sources */,
 				8250B8231A6ADA5600C971B7 /* AddCollaboratorViewController.swift in Sources */,
 				8250B8251A6ADA7600C971B7 /* HostSelectSongsViewController.swift in Sources */,
 				82E7416B1A6A018900BF3D58 /* ViewController.swift in Sources */,
