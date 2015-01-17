@@ -179,9 +179,9 @@ func log <T: DebugPrintable> (value: T)
 
 var session : SPTSession!
 
-let clientID = "7e0d924d7ec24f908450665879db2d3f"
-let hostingURL = NSURL(string: "https://m3b1y.herokuapp.com")
-let callbackURL = NSURL(string: "m3b1y://")
+let clientID = "e6695c6d22214e0f832006889566df9c"
+let hostingURL = NSURL(string: "https://peaceful-sierra-1249.herokuapp.com/swap")
+let callbackURL = NSURL(string: "spotifyiossdkexample://")
 let selectedScopes = [SPTAuthPlaylistModifyPrivateScope]
 /**
 Use this function to navigate to Spotify to authenticate a user.
@@ -191,25 +191,20 @@ func authenticateSpotify()
 	let auth = SPTAuth.defaultInstance()
 	var loginURL : NSURL?
 	
-	
-	/*
 	if (hostingURL == nil)
 	{
 		// If we don't have a token exchange service, we need to request the token response type.
-		loginURL = auth.loginURLForClientId(clientID, declaredRedirectURL: callbackURL, scopes: selectedScopes, withResponseType:"code")
+		loginURL = auth.loginURLForClientId(clientID, declaredRedirectURL: callbackURL, scopes: selectedScopes, withResponseType:"token")
 	}
 	else
 	{
-		loginURL = auth.loginURLForClientId(clientID, declaredRedirectURL:callbackURL, scopes: selectedScopes)
-		
-	}*/
-	
+		loginURL = auth.loginURLForClientId(clientID, declaredRedirectURL: callbackURL, scopes: selectedScopes)
+	}
 	if (loginURL == nil)
 	{
 		log("Error")
 	}
-	//let loginURL = auth.loginURLForClientId("7e0d924d7ec24f908450665879db2d3f", declaredRedirectURL: callbackURL, scopes: [SPTAuthPlaylistModifyPrivateScope])
-	//let loginURL = auth.loginURLForClientId("7e0d924d7ec24f908450665879db2d3f", declaredRedirectURL: hostingURL, scopes: [SPTAuthPlaylistModifyPrivateScope]) //TODO: Add scopes as required
+	//TODO: Add scopes as required
 	UIApplication.sharedApplication().openURL(loginURL!)
 }
 

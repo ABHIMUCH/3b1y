@@ -16,15 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
 	{
 		// Override point for customization after application launch.
-		/*
 		Parse.enableLocalDatastore()
-		
 		// Initialize Parse.
 		Parse.setApplicationId("UWmbYVob4Fsvh8HuIMRJdZohqTBZGqo0KCH3wdir", clientKey: "iVNhdAS3VHrX5XDpumTyp07mlsJg3ftVADCjCh1A")
-		
+		PFFacebookUtils.initializeFacebook()
 		// [Optional] Track statistics around application opens.
 		PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: {(completed, error) in })
-		*/
 		var userNotifcationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
 		// Register for Push Notitications
 		var settings = UIUserNotificationSettings(forTypes: userNotifcationTypes, categories: nil)
@@ -75,15 +72,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		if (SPTAuth.defaultInstance().canHandleURL(url, withDeclaredRedirectURL: NSURL(string: "m3b1y://")))
 		{
 			// Call the token swap service to get a logged in session
-			SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, tokenSwapServiceEndpointAtURL: hostingURL, callback: {(error, session) in
+			SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, tokenSwapServiceEndpointAtURL: hostingURL, callback: {(error, thisSession) in
 				if (error != nil)
 				{
 					log("Authentication Error! HELP!!!: \(error)")
 					return
 				}
-				println(session)
+				session = thisSession
 				//[self playUsingSession:session];
 			})
+			return true
+		}
+		else if (FBAppCall.handleOpenURL(url, sourceApplication:sourceApplication,
+			withSession:PFFacebookUtils.session()))
+		{
 			return true
 		}
 		return false

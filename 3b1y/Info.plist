@@ -27,7 +27,7 @@
 			<string>Spotify Authentication</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>m3b1y</string>
+				<string>spotifyiossdkexample</string>
 			</array>
 		</dict>
 	</array>
