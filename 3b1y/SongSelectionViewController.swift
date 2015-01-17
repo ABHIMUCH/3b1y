@@ -10,20 +10,33 @@ import UIKit
 
 struct Playlist
 {
-	
+	var name: String
+	var uri: NSURL
+	var trackCount : Int
+	var owner : String
+}
+struct Song
+{
+	var name: String
+	var album: String
+	var artist: String
+	var image: NSURL
 }
 
 class SongSelectionViewController: UITableViewController
 {
-	let playlists = [Playlist]()
+	var playlists = [Playlist]()
 	
 	override func viewDidLoad()
 	{
 		SPTRequest.playlistsForUserInSession(session, callback: {(error, playlistListRecieved) in
-			let playlistList = (playlistListRecieved as SPTPlaylistList)
+			let playlistListItems = (playlistListRecieved as SPTPlaylistList).items
 			
-			
+			for playlistPartial in playlistListItems as [SPTPartialPlaylist]
+			{
+				let owner = playlistPartial.owner as SPTUser
+				self.playlists.append(Playlist(name: playlistPartial.name, uri: playlistPartial.uri, trackCount: Int(playlistPartial.trackCount), owner: owner.canonicalUserName))
+			}
 		})
 	}
-	
 }
