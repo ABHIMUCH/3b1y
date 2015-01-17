@@ -31,6 +31,39 @@ class PlaylistSelectionViewController: UITableViewController
 				let owner = playlistPartial.owner as SPTUser
 				self.playlists.append(Playlist(name: playlistPartial.name, uri: playlistPartial.uri, trackCount: Int(playlistPartial.trackCount), owner: owner.canonicalUserName))
 			}
+			self.tableView.reloadData()
 		})
+	}
+}
+extension PlaylistSelectionViewController : UITableViewDataSource, UITableViewDelegate
+{
+	override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+	{
+		return 1
+	}
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+	{
+		println(playlists.count)
+		return playlists.count
+	}
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+	{
+		let playlist = playlists[indexPath.row]
+		let cell = tableView.dequeueReusableCellWithIdentifier("playlistCell") as PlaylistCell
+		cell.playlistName.text = playlist.name
+		cell.playlistOwner.text = playlist.owner
+		cell.trackCount.text = "\(playlist.trackCount) songs"
+		return cell
+	}
+	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+	{
+		let playlist = playlists[indexPath.row]
+
+		SPTRequest.requestItemAtURI(playlist.uri, withSession: session, callback: {(error, plist) in
+			let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("SongList") as SongSelectionViewController
+			 println(plist)
+			self.navigationController?.pushViewController(viewController, animated: true)
+		})
+		
 	}
 }

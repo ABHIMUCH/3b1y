@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 Manav Gabhawala. All rights reserved.
 //
 
-import Cocoa
+import UIKit
+
 struct Song
 {
     var name: String
@@ -16,5 +17,5 @@ struct Song
 }
 class SongSelectionViewController: UITableViewController
 {
-    var playlist : SPTPartialPlaylist!
+    var playlist : SPTPlaylistList!
 }
