@@ -225,4 +225,16 @@ extension UIAlertController
 		controller.presentViewController(alertController, animated: true, completion: nil)
 	}
 }
+extension NSDate
+{
+	var mediumStringValue : String
+	{
+		get { }
+	}
+	var 
+}
 
+func < (lhs: NSDate, rhs: NSDate) -> Bool
+{
+	return (lhs.compare(rhs) == NSComparisonResult.OrderedAscending)
+}
