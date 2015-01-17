@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
 	{
 		// Override point for customization after application launch.
-		
+		/*
 		Parse.enableLocalDatastore()
 		
 		// Initialize Parse.
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		// [Optional] Track statistics around application opens.
 		PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: {(completed, error) in })
-		
+		*/
 		var userNotifcationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
 		// Register for Push Notitications
 		var settings = UIUserNotificationSettings(forTypes: userNotifcationTypes, categories: nil)
@@ -44,36 +44,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
 		// If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 	}
-
 	func applicationWillEnterForeground(application: UIApplication)
 	{
 		// Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 	}
-
+	
 	func applicationDidBecomeActive(application: UIApplication)
 	{
 		// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 	}
-
 	func applicationWillTerminate(application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 	func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject])
 	{
-		PFPush.handlePush(userInfo)
+		//PFPush.handlePush(userInfo)
 	}
 	func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData)
 	{
 		// Store the deviceToken in the current installation and save it to Parse.
-		var currentInstallation = PFInstallation.currentInstallation()
+		/*var currentInstallation = PFInstallation.currentInstallation()
 		currentInstallation.setDeviceTokenFromData(deviceToken)
 		currentInstallation.channels = ["global"]
-		currentInstallation.saveInBackgroundWithBlock({(completed, error) in })
+		currentInstallation.saveInBackgroundWithBlock({(completed, error) in })*/
 	}
 	func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool
 	{
 		// Ask SPTAuth if the URL given is a Spotify authentication callback
-		if (SPTAuth.defaultInstance().canHandleURL(url, withDeclaredRedirectURL: hostingURL))
+		println(url)
+		if (SPTAuth.defaultInstance().canHandleURL(url, withDeclaredRedirectURL: NSURL(string: "m3b1y://spotifyauthentication")))
 		{
 			// Call the token swap service to get a logged in session
 			SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, tokenSwapServiceEndpointAtURL: hostingURL, callback: {(error, session) in
@@ -82,6 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 					log("Authentication Error! HELP!!!: \(error)")
 					return
 				}
+				println(session)
 				//[self playUsingSession:session];
 			})
 			return true
