@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82441BED1A6B072E00C25584 /* MusicCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82441BEC1A6B072E00C25584 /* MusicCells.swift */; };
 		8250B8231A6ADA5600C971B7 /* AddCollaboratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250B8221A6ADA5600C971B7 /* AddCollaboratorViewController.swift */; };
 		8250B8251A6ADA7600C971B7 /* HostSelectSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250B8241A6ADA7600C971B7 /* HostSelectSongsViewController.swift */; };
 		825B67CB1A6A2031006CE04E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B67C31A6A2031006CE04E /* AudioToolbox.framework */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82441BEC1A6B072E00C25584 /* MusicCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicCells.swift; sourceTree = "<group>"; };
 		8250B8221A6ADA5600C971B7 /* AddCollaboratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollaboratorViewController.swift; sourceTree = "<group>"; };
 		8250B8241A6ADA7600C971B7 /* HostSelectSongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostSelectSongsViewController.swift; sourceTree = "<group>"; };
 		825B67C31A6A2031006CE04E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -133,6 +135,7 @@
 		8250B8271A6ADC1300C971B7 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				82441BEC1A6B072E00C25584 /* MusicCells.swift */,
 				82C53F131A6AA87D003603B3 /* SessionCellView.swift */,
 			);
 			name = "Custom Views";
@@ -343,6 +346,7 @@
 				8250B8251A6ADA7600C971B7 /* HostSelectSongsViewController.swift in Sources */,
 				82E7416B1A6A018900BF3D58 /* ViewController.swift in Sources */,
 				825B67E31A6A2B8B006CE04E /* Generic Extensions.swift in Sources */,
+				82441BED1A6B072E00C25584 /* MusicCells.swift in Sources */,
 				82E741691A6A018900BF3D58 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

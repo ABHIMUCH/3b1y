@@ -115,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" rowHeight="100" id="bGz-Df-BHx">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" rowHeight="100" id="bGz-Df-BHx" customClass="SongCell" customModule="_b1y" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bGz-Df-BHx" id="0LP-0k-fQ2">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -153,8 +153,14 @@
                                         <constraint firstItem="cuf-HJ-vRD" firstAttribute="top" secondItem="C5u-Xt-O9m" secondAttribute="top" id="STh-Vb-XnB"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="albumName" destination="odj-hn-jMl" id="DgQ-eN-Z8p"/>
+                                    <outlet property="artistName" destination="kkd-Yr-au1" id="0pD-dR-zuI"/>
+                                    <outlet property="image" destination="cuf-HJ-vRD" id="okF-IC-e8Y"/>
+                                    <outlet property="songName" destination="C5u-Xt-O9m" id="lES-hg-shN"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playlistCell" rowHeight="70" id="INL-z3-6MO">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playlistCell" rowHeight="70" id="INL-z3-6MO" customClass="PlaylistCell" customModule="_b1y" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="INL-z3-6MO" id="00B-3r-bQD">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -179,6 +185,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="playlistName" destination="HlW-bW-ocm" id="atD-0a-pkn"/>
+                                    <outlet property="playlistOwner" destination="eTE-W9-6aX" id="ogB-E5-wBC"/>
+                                    <outlet property="trackNumber" destination="OYj-KU-xkN" id="eup-YU-yKa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
