@@ -24,14 +24,17 @@ class PlaylistSelectionViewController: UITableViewController
 	override func viewDidLoad()
 	{
 		SPTRequest.playlistsForUserInSession(session, callback: {(error, playlistListRecieved) in
-			let playlistListItems = (playlistListRecieved as SPTPlaylistList).items
-			
-			for playlistPartial in playlistListItems as [SPTPartialPlaylist]
+			if (error == nil)
 			{
-				let owner = playlistPartial.owner as SPTUser
-				self.playlists.append(Playlist(name: playlistPartial.name, uri: playlistPartial.uri, trackCount: Int(playlistPartial.trackCount), owner: owner.canonicalUserName))
+				let playlistListItems = (playlistListRecieved as SPTPlaylistList).items
+				
+				for playlistPartial in playlistListItems as [SPTPartialPlaylist]
+				{
+					let owner = playlistPartial.owner as SPTUser
+					self.playlists.append(Playlist(name: playlistPartial.name, uri: playlistPartial.uri, trackCount: Int(playlistPartial.trackCount), owner: owner.canonicalUserName))
+				}
+				self.tableView.reloadData()
 			}
-			self.tableView.reloadData()
 		})
 	}
 }
@@ -43,7 +46,6 @@ extension PlaylistSelectionViewController : UITableViewDataSource, UITableViewDe
 	}
 	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
 	{
-		println(playlists.count)
 		return playlists.count
 	}
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -66,4 +68,5 @@ extension PlaylistSelectionViewController : UITableViewDataSource, UITableViewDe
 		})
 		
 	}
+	tableView
 }

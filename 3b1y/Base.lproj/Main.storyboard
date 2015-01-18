@@ -166,6 +166,9 @@
                             <outlet property="delegate" destination="Yav-ne-Fsy" id="ySM-BM-XSy"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="rIi-3M-nZc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <segue destination="2tE-Sg-QOQ" kind="show" identifier="showPlaylist" id="fCB-tM-jav"/>
                     </connections>
@@ -188,37 +191,42 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hqP-eW-f9R" id="iK4-nu-Pm2">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sb-73-bEO">
-                                            <rect key="frame" x="8" y="9" width="83" height="83"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3sb-73-bEO">
+                                            <rect key="frame" x="8" y="8" width="84" height="84"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="83" id="LZv-R8-eJH"/>
+                                                <constraint firstAttribute="width" constant="84" id="LZv-R8-eJH"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xci-dN-d9N">
-                                            <rect key="frame" x="99" y="8" width="154" height="36"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xci-dN-d9N">
+                                            <rect key="frame" x="100" y="8" width="123.5" height="28.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFO-eA-xWq">
-                                            <rect key="frame" x="99" y="70" width="100" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OW4-rl-fNX">
+                                            <rect key="frame" x="100" y="46" width="35.5" height="19"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OW4-rl-fNX">
-                                            <rect key="frame" x="99" y="43" width="41" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFO-eA-xWq">
+                                            <rect key="frame" x="100" y="73" width="90" height="19"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="rFO-eA-xWq" firstAttribute="leading" secondItem="3sb-73-bEO" secondAttribute="trailing" constant="8" symbolic="YES" id="6gc-Dd-vtN"/>
                                         <constraint firstItem="3sb-73-bEO" firstAttribute="leading" secondItem="iK4-nu-Pm2" secondAttribute="leadingMargin" id="Mkd-ix-FHi"/>
+                                        <constraint firstItem="OW4-rl-fNX" firstAttribute="leading" secondItem="rFO-eA-xWq" secondAttribute="leading" id="QTb-ep-Dgt"/>
                                         <constraint firstItem="3sb-73-bEO" firstAttribute="top" secondItem="iK4-nu-Pm2" secondAttribute="topMargin" id="Z1G-Kg-IoF"/>
+                                        <constraint firstItem="rFO-eA-xWq" firstAttribute="top" secondItem="OW4-rl-fNX" secondAttribute="bottom" constant="8" symbolic="YES" id="ghW-hr-6dT"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="3sb-73-bEO" secondAttribute="bottom" id="o41-sZ-pVA"/>
+                                        <constraint firstItem="rFO-eA-xWq" firstAttribute="bottom" secondItem="3sb-73-bEO" secondAttribute="bottom" id="vS4-cs-b7J"/>
                                         <constraint firstItem="xci-dN-d9N" firstAttribute="leading" secondItem="3sb-73-bEO" secondAttribute="trailing" constant="8" symbolic="YES" id="wXS-ix-RxB"/>
                                         <constraint firstItem="3sb-73-bEO" firstAttribute="top" secondItem="xci-dN-d9N" secondAttribute="top" id="zMG-rd-gnU"/>
+                                        <constraint firstItem="3sb-73-bEO" firstAttribute="top" secondItem="iK4-nu-Pm2" secondAttribute="topMargin" id="zSl-n0-WHu"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
